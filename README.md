@@ -1,90 +1,128 @@
-# Full Name Extraction, File Handling, Baby Names Extraction, and Sorting Algorithm
+Python Project: Data Processing and To-Do List with PostgreSQL
 
-# Overview
+Description
 
-This Python script performs multiple tasks, including:
+This Python project covers multiple functionalities including:
 
-Writing and reading a full name from a text file.
+Reading and writing names to a file
 
-Extracting and displaying first name, surname, and last name.
+Extracting baby names from an HTML file using regex
 
-Printing the local file path of the stored text file.
+Implementing sorting (Bubble Sort) and searching (Binary Search)
 
-Extracting baby names from an HTML file using regex.
+Generating a Fibonacci series
 
-Implementing Bubble Sort for sorting an array.
+Managing a to-do list with PostgreSQL
 
-Implementing Binary Search for searching an element in a sorted list.
+Storing baby names in a PostgreSQL database
 
-# Features
+Features
 
-File Handling: Reads and writes a full name to name.txt.
+1. File Handling: Writing and Reading Names
 
-String Manipulation: Extracts and displays name parts.
+Writes a full name to a text file (name.txt)
 
-Local Path Retrieval: Prints the absolute path of name.txt.
+Reads and extracts first name, surname, and last name from the file
 
-Regex Extraction: Extracts baby names from an HTML file (baby2008.html).
+2. Extracting Baby Names from HTML
 
-Sorting Algorithm: Implements Bubble Sort to sort an array.
+Uses regex to extract baby names along with their ranks from an HTML file (baby2008.html)
 
-Search Algorithm: Implements Binary Search to locate an element in a sorted list.
+Displays the names sorted by rank
 
-# Installation & Usage
+3. Sorting and Searching
 
-Prerequisites
+Implements Bubble Sort to sort a list of numbers
 
-Python 3.x installed
+Implements Binary Search to find an element in a sorted list
 
-Running the Script
+4. Fibonacci Series Generator
 
-Save the script in a .py file (e.g., script.py).
+Generates the Fibonacci sequence up to n terms
 
-Ensure that baby2008.html exists in the same directory.
+5. To-Do List with PostgreSQL
 
-Run the script using:
+Uses PostgreSQL for persistent storage
 
-    python3 script.py
+Supports CRUD operations: add, retrieve, update, and delete tasks
 
-Code Explanation
+6. Saving Baby Names to PostgreSQL
 
-Question 1: Writing and Reading Full Name
+Creates a baby_names table in PostgreSQL
 
-Writes "Ofonime Nsikak Eno" to name.txt.
+Inserts extracted baby names into the database
 
-Reads the file and extracts the first name, surname, and last name.
+Requirements
 
-Question 2: Printing Local File Path
+Make sure you have the following installed:
 
-Uses os.path.abspath() to get the full path of name.txt.
+Python 3.x
 
-Question 3: Extracting Baby Names from HTML
+PostgreSQL
 
-Reads baby2008.html and uses regex to extract ranked baby names.
+Required Python packages: psycopg2
 
-Displays extracted names sorted by rank.
+Installation
 
-Question 4: Sorting and Searching
+Clone this repository:
 
-Bubble Sort: Sorts a list of numbers.
+git clone https://github.com/Dannynsikak/Bincom-fibonaciseries.git
+cd Bincom-fibonaciseries
 
-Binary Search: Searches for a target number in the sorted list and returns its index.
+Install dependencies:
 
-Example Output
+pip install psycopg2
 
-First Name: Ofonime
-Surname: Nsikak
-Last Name: Eno
-Local Path: /absolute/path/to/name.txt
+Set up PostgreSQL:
 
-Extracted Baby Names:
-Rank 1: Emma, Jacob
-Rank 2: Olivia, Michael
-...
+Create a database: my_database
 
-Sorted Numbers: [5, 7, 23, 32, 34, 62]
-Binary Search: 23 found at index 2
+Update the connection parameters in the create_connection() function
 
-# Author
+Run the script:
 
-**Ofonime Nsikak Eno**
+python script.py
+
+Usage
+
+Modify the baby2008.html file with your dataset before running the script.
+
+Run the script to extract names, manage tasks, and store data in PostgreSQL.
+
+Database Schema
+
+To-Do List Table (todo)
+
+    id
+
+    task
+
+    status
+
+    SERIAL PRIMARY KEY
+
+    TEXT NOT NULL
+
+    BOOLEAN DEFAULT FALSE
+
+Baby Names Table (baby_names)
+
+    rank
+
+    girl_name
+
+    boy_name
+
+    INTEGER
+
+    TEXT
+
+    TEXT
+
+Author
+
+Ofonime Nsikak Eno
+
+License
+
+This project is licensed under the MIT License.
